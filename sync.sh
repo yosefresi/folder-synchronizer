@@ -3,12 +3,13 @@
 dirawal=$1
 dirtujuan=$2
 
+
 #ini aku coba buat untuk sync file extension tertentu#
 #contohnya untuk file extension .mp3#
 #cara kerjanya nanti akan cari file dengan command
 # find terus hasinya di copy ke folder tujuan
 #tapi hasilnya masih salah..
-#ada yang bisa perbaiki?
+#ada yang bisa perbaiki
 #
 #sync_extension (){
 #	for FILE in `ls $dirawal`
