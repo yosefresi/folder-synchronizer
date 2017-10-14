@@ -8,7 +8,7 @@ dirtujuan=$2
 sync_copy (){
 	for FILE in `ls $dirawal`
 	do
-		cp $dirawal/$FILE $dirtujuan
+		cp -v $dirawal/$FILE $dirtujuan
 	done
 }
 
@@ -19,14 +19,14 @@ sync_delall (){
 	done
 	for FILE in `ls $dirawal`
 	do
-		cp $dirawal/$FILE $dirtujuan
+		cp -v $dirawal/$FILE $dirtujuan
 	done
 }
 
 sync_add (){
 	for FILE in `ls $dirawal`
 	do
-		cp -n $dirawal/$FILE $dirtujuan
+		cp -n -v $dirawal/$FILE $dirtujuan
 	done
 }
 
