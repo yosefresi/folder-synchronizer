@@ -29,27 +29,38 @@ sync_add (){
 }
 
 sync_extension (){
-        if [ "$param" = "/r" ]; then
+        if [ $param = "/r" ]; then
                 find $dirawal -name "*.$ext" -exec cp -v {} $dirtujuan \;
-        elif [ "$param" = "/f" ]; then
+        elif [ $param = "/f" ]; then
                 sync_force
-        elif [ "$param" = "/a" ]; then
+        elif [ $param = "/a" ]; then
                 find $dirawal -name "*.$ext" -exec cp -v -n {} $dirtujuan \;
         fi
 }
 
 if [ "$dirawal" = "/?" ]; then
 	#write HELP doc here.
-	echo -e  "# \t Name : Synchronized folder"
-	echo -e  "# \t Synopsis	sync.sh [source] [destination]"
-	echo -e  "# \t Description :	"
-	echo -e  "# \t \t replace/r -- Overwrite semua file yang ada pada direktori tujuan \n"
-	echo -e  "# \t \t force/r -- menghapus file yang berada pada direktori tujuan kemudian
-				     memindahkan file dari direktori awal "
-	echo -e  "# \t \t add/r -- memindahkan file yang ada pada direktori awal ke direktori
-				   tujuan. Hanya akan memindahkan file yang belum ada pada
-				   direktori tujuan"
-	exit 0
+	echo -e "Folder Synchronizer"
+	echo -e "\nUSAGE"
+	echo -e "\tsync.sh sourcedir destdir OPTION [EXT]"
+	echo -e "\nOPTIONS"
+	echo -e "\t/r -- Replace Synchronize - Menyalin semua file di folder sumber ke folder tujuan. File yang sudah ada akan ditimpa."
+	echo -e "\t/f -- Force Synchronize - Memaksa folder tujuan berisi sama persis dengan folder sumber."
+	echo -e "\t/a -- Add Synchronize - Menyalin semua file yang belum ada di folder tujuan."
+	echo -e "\nEXT"
+	echo -e "\tExtensi file. Misal mp3, pdf."
+	echo -e "\tJika ada, maka hanya akan memproses file dengan ekstensi yang disebutkan. Akan diabaikan jika menggunakan /f."
+	echo -e "\nEXAMPLE"
+	echo -e "\tsync.sh old new /f"
+	echo -e "\tMenyalin semua file di folder 'old' ke folder 'new'. Memaksa isi folder 'new' sama persis dengan folder 'old'."
+	echo -e "\n\tsync.sh old new /r mp3"
+	echo -e "\tMenyalin semua file berekstensi mp3 dari folder 'old' ke folder 'new'. Menimpa file yang sudah ada."
+	echo -e "\nVERSION"
+	echo -e "\t1.0"
+	echo -e "\nAUTHOR"
+	echo -e "\tDitulis oleh Johan Alda, Yosef Resi Augmanto, dan Silvanus Satno Nugraha."
+	echo -e ""
+exit 0
 fi
 
 if  [ -d $dirawal ]; then
