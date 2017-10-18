@@ -40,6 +40,15 @@ sync_extension (){
 
 if [ "$dirawal" = "/?" ]; then
 	#write HELP doc here.
+	echo -e  "# \t Name : Synchronized folder"
+	echo -e  "# \t Synopsis	sync.sh [source] [destination]"
+	echo -e  "# \t Description :	"
+	echo -e  "# \t \t replace/r -- Overwrite semua file yang ada pada direktori tujuan \n"
+	echo -e  "# \t \t force/r -- menghapus file yang berada pada direktori tujuan kemudian
+				     memindahkan file dari direktori awal "
+	echo -e  "# \t \t add/r -- memindahkan file yang ada pada direktori awal ke direktori
+				   tujuan. Hanya akan memindahkan file yang belum ada pada
+				   direktori tujuan"
 	exit 0
 fi
 
